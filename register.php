@@ -9,10 +9,21 @@ if (Input::exists()) {
             'required' => true,
             'min'      => 2,
             'max'      => 20,
+            'unique'   => 'users'
         ],
-        'password' => [],
-        'password_again' => [],
-        'name'     => []
+        'password' => [
+            'required' => true,
+            'min'      => 5
+        ],
+        'password_again' => [
+            'required' => true,
+            'matches'  => 'password'
+        ],
+        'name'     => [
+            'required' => true,
+            'min'      => 2,
+            'max'      => 50
+        ]
     ]);
 }
 ?>
