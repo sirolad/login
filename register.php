@@ -3,9 +3,18 @@
 require_once 'core/init.php';
 
 if (Input::exists()) {
-    echo "Submitted";
+    $validate  = new Validate();
+    $valiation = $validate->check($_POST, [
+        'username' => [
+            'required' => true,
+            'min'      => 2,
+            'max'      => 20,
+        ],
+        'password' => [],
+        'password_again' => [],
+        'name'     => []
+    ]);
 }
-
 ?>
 <form action="" method="post">
     <div class="field">
